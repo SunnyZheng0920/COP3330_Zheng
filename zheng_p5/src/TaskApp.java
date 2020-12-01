@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TaskApp {
-    static void runTaskList() throws Exception {
+    void runTaskList() throws Exception {
         Scanner scan = new Scanner(System.in);
         displayTaskMainMenu();
         int taskListMainInput;
@@ -34,7 +34,7 @@ public class TaskApp {
         }
     }
 
-    private static void TaskListOperationMenuPhase(TaskList list) throws Exception {
+    private void TaskListOperationMenuPhase(TaskList list) throws Exception {
         displayTaskListOperationMenu();
         int taskListOperationInput;
         while(true) {
@@ -51,7 +51,7 @@ public class TaskApp {
         }
     }
 
-    private static void operationMenu(int operationMenuSelection, TaskList list) throws Exception {
+    private void operationMenu(int operationMenuSelection, TaskList list) throws Exception {
         Scanner scan = new Scanner(System.in);
         switch (operationMenuSelection) {
             case 1:
@@ -187,7 +187,7 @@ public class TaskApp {
         }
     }
 
-    protected static int takeUserInputInt() {
+    protected int takeUserInputInt() {
         try{
             Scanner applicationScan = new Scanner(System.in);
             return applicationScan.nextInt();
@@ -196,7 +196,7 @@ public class TaskApp {
         }
     }
 
-    protected static int takeIndexInput(int size) {
+    protected int takeIndexInput(int size) {
         int indexInput;
         while (true) {
             try {
@@ -211,15 +211,15 @@ public class TaskApp {
         }
     }
 
-    private static boolean validIndex(int index, TaskList list) {
+    private boolean validIndex(int index, TaskList list) {
         return (index >= 0) && (index < list.getSize());
     }
 
-    private static boolean correctInput(String title, String dueDate) {
+    private boolean correctInput(String title, String dueDate) {
         return title != null && dueDate != null;
     }
 
-    private static boolean printList(TaskList list) {
+    private boolean printList(TaskList list) {
         if (list.getSize() > 0) {
             list.printList();
             return true;
@@ -229,7 +229,7 @@ public class TaskApp {
             return false;
         }
     }
-    private static Boolean printUncompletedList (TaskList list) {
+    private Boolean printUncompletedList (TaskList list) {
         if (list.getSize() > 0) {
             list.printUncompletedList();
             return true;
@@ -239,7 +239,7 @@ public class TaskApp {
             return false;
         }
     }
-    private static Boolean printCompletedList (TaskList list) {
+    private Boolean printCompletedList (TaskList list) {
         if (list.getSize() > 0) {
             list.printCompletedList();
             return true;
@@ -250,7 +250,7 @@ public class TaskApp {
         }
     }
 
-    protected static void displayTaskMainMenu() {
+    protected void displayTaskMainMenu() {
         System.out.println("Main Menu");
         System.out.println("---------");
         System.out.println("\n1) create a new list");
@@ -258,7 +258,7 @@ public class TaskApp {
         System.out.println("3) quit\n");
     }
 
-    private static void displayTaskListOperationMenu() {
+    private void displayTaskListOperationMenu() {
         System.out.println("\nList Operation Menu");
         System.out.println("---------");
         System.out.println("\n1) view the list");
@@ -271,15 +271,15 @@ public class TaskApp {
         System.out.println("8) quit to the main menu\n");
     }
 
-    protected static void displayCurrentTasks() {
+    protected void displayCurrentTasks() {
         System.out.println("\nCurrent Tasks");
         System.out.println("-------------\n");
     }
-    private static void displayUncompletedTask() {
+    private void displayUncompletedTask() {
         System.out.println("\nUncompleted Tasks");
         System.out.println("-------------\n");
     }
-    private static void displayCompletedTask() {
+    private void displayCompletedTask() {
         System.out.println("\nCompleted Tasks");
         System.out.println("-------------\n");
     }

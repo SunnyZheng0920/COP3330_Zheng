@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class ContactApp extends TaskApp {
 
-    static void runContactList() throws Exception {
+     void runContactList() throws Exception {
         Scanner scan = new Scanner(System.in);
         displayContactMainMenu();
         int ContactListMainInput;
@@ -35,7 +35,7 @@ public class ContactApp extends TaskApp {
         }
     }
 
-    private static void contactListOperationMenuPhase(ContactList list) throws IOException {
+    private void contactListOperationMenuPhase(ContactList list) throws IOException {
         displayContactListOperationMenu();
         int contactListOperationInput;
         while(true) {
@@ -52,7 +52,7 @@ public class ContactApp extends TaskApp {
         }
     }
 
-    private static void contactOperationMenu(int contactListOperationInput, ContactList list) throws IOException {
+    private void contactOperationMenu(int contactListOperationInput, ContactList list) throws IOException {
         String firstName = null, lastName = null, phoneNumber = null, emailAddress = null;
         Scanner scan = new Scanner(System.in);
         switch (contactListOperationInput) {
@@ -157,11 +157,11 @@ public class ContactApp extends TaskApp {
         }
     }
 
-    private static boolean validContactIndex(int index, ContactList list) {
+    private boolean validContactIndex(int index, ContactList list) {
         return (index >= 0) && (index < list.getSize());
     }
 
-    private static boolean printContactList(ContactList list) {
+    private boolean printContactList(ContactList list) {
         if (list.getSize() > 0) {
             list.printList();
             return true;
@@ -172,7 +172,7 @@ public class ContactApp extends TaskApp {
         }
     }
 
-    private static void displayContactListOperationMenu() {
+    private void displayContactListOperationMenu() {
         System.out.println("\nList Operation Menu");
         System.out.println("---------\n");
         System.out.println("1) view the list");
@@ -183,7 +183,7 @@ public class ContactApp extends TaskApp {
         System.out.println("6) quit to the main menu\n");
     }
 
-    private static void displayContactMainMenu() {
+    private void displayContactMainMenu() {
         System.out.println("Main Menu");
         System.out.println("---------");
         System.out.println("\n1) create a new list");
@@ -192,7 +192,7 @@ public class ContactApp extends TaskApp {
     }
 
 
-    protected static void displayCurrentTasks() {
+    protected void displayCurrentTasks() {
         System.out.println("\nCurrent Contacts");
         System.out.println("-------------\n");
     }
